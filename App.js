@@ -1,11 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
+
 
 export default function App() {
+  const getTimeStamp = () => {
+    let timeStamp = new Date();
+    let utcDate = timeStamp.toUTCString();
+  }
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>Time Card:</Text>
+      <Button color="#841fff" style={styles.button} onPress={getTimeStamp} title="Punch Time" />
       <StatusBar style="auto" />
     </View>
   );
@@ -18,4 +24,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  button: {
+    width:150,
+    height:20,
+    backgroundColor: '#000000',
+  }
 });
